@@ -16,7 +16,7 @@ current_source=Cat.cpp
 path_char=\
 [source]
 path=Cat.cpp
-cursor=55:14
+cursor=94:0
 open=true
 [config]
 name=Debug

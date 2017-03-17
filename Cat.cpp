@@ -1,7 +1,14 @@
 #include<iostream>
 #include<cstdlib>
 using namespace std;
-class Cat{
+class Animal{
+public:
+	virtual void print()=0;
+	virtual void move()=0;
+	virtual void sound()=0;
+};
+
+class Cat : public Animal{
 public:
 	string color;//颜色
 	int legs;//腿
@@ -23,7 +30,7 @@ public:
 	}
 };
 
-class Dog{
+class Dog : public Animal{
 public:
 	string color;//颜色
 	int legs;//腿
@@ -44,16 +51,44 @@ public:
 		cout<<"汪汪"<<endl;
 	}
 };
-
+class Mouse : public Animal{
+	public:
+		string color;
+		int legs;
+	private:
+		int age;
+		string gender;
+	public:
+		Mouse(string c,int l,int a,string g){
+	color=c;legs=l;age=a;gender=g;		
+	}
+	void print(){
+			cout<<color<<" "<<legs<<" "<<age<<" "<<gender<<endl;
+		}
+	void move(){
+		cout<<"爬行"<<endl;
+	}	
+	void sound(){
+		cout<<"吱吱"<<endl;
+	}
+};
 int main(){
+	Animal *an;
 	Cat Cat1("黑色",4,13,"公");
-	Cat1.print();
-	Cat1.move();
-	Cat1.sound();
+	an=&Cat1;
+	an->print();
+	an->move();
+	an->sound();
 	Dog Dog1("白色",4,13,"母");
-	Dog1.print();
-	Dog1.move();
-	Dog1.sound();
+	an=&Dog1;
+	(*an).print();
+	(*an).move();
+	(*an).sound();
+	Mouse Mouse1("灰色",4,4,"公");
+	an=&Mouse1;
+	(*an).print();
+	an->move();
+	(*an).sound();
 	system("pause");
 	return 0;
 }
