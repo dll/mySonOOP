@@ -17,8 +17,14 @@ double Calculator::Calculate(){
 		return operand1-operand2;
 	else if(operat=='*')
 		return operand1*operand2;
-	else if(operat=='/')
+	else if(operat=='/'){
+		if(operand2==0){
+			cout<<"除数不能为零，请重输"<<endl;
+			system("pause");
+			exit(0);
+		}
 		return operand1/operand2;
+	}
 	else {
 		cout<<"操作符错误"<<endl;
 		system("pause");
