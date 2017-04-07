@@ -25,6 +25,7 @@ int main (int argc, char *argv[]) {
 		cout<<"dowhile:"<<a<<" ";
 		a=a+1;
 	} while(a<=10);//16,17,18,19,20行代码，至少循环1次
+	int *p=nullptr;
 	
 	system("pause");
 	return 0;

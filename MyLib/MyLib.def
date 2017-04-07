@@ -1,0 +1,24 @@
+EXPORTS
+    _ZN6PersonC1Ev @1
+    _ZN6PersonC2Ev @2
+    _ZN6PersonD1Ev @3
+    _ZN6PersonD2Ev @4
+    _ZN7Student4showEv @5
+    _ZN7StudentC1Ev @6
+    _ZN7StudentC2Ev @7
+    _ZN7StudentD1Ev @8
+    _ZN7StudentD2Ev @9
+    _ZN7Teacher4showEv @10
+    _ZN7TeacherC1Ev @11
+    _ZN7TeacherC2Ev @12
+    _ZN7TeacherD1Ev @13
+    _ZN7TeacherD2Ev @14
+    _ZTI6Person @15 DATA
+    _ZTI7Student @16 DATA
+    _ZTI7Teacher @17 DATA
+    _ZTS6Person @18 DATA
+    _ZTS7Student @19 DATA
+    _ZTS7Teacher @20 DATA
+    _ZTV6Person @21 DATA
+    _ZTV7Student @22 DATA
+    _ZTV7Teacher @23 DATA
