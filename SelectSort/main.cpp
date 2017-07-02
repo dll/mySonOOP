@@ -13,20 +13,35 @@ public:
 		this->gl=gl;
 		
 		PrintSort();//1没有排序
-		
 		//2选择排序			
-		for (int i=0 ; i< n-1 ; i++) //n-1趟排序
+		for (int i=0 ; i< (n-1)/2 ; i++) //n-1趟排序
 		{
-			int index=i; //假设index处对应的数组元素是最小的或者最大的
-			for(int j=i+1; j<n; j++){//查找最小记录的位置
-				if(gl==1&&arr[j]<arr[index])//升序
-					index=j;//最小
-				if(gl==2&&arr[j]>arr[index])//降序
-					index=j;//最大
+			int j,imin=i, imax=i; //假设index处对应的数组元素是最小的或者最大的
+			for(j=i+1; j<n-i; j++){//查找最小记录的位置
+				if(arr[j]>arr[imax]){
+					imax=j;//最大
+					continue;
+				}
+				if(arr[j]<arr[imin])
+					imin=j;//最小
 			}
 			//若无序区第一个元素不是无序区中最小或最大元素，则进行交换
-			if ( index!=i) 
-				swap(arr[index],arr[i]);
+			if(gl==1){//升序
+				if ( imin!=i) 
+					swap(arr[imin],arr[i]);
+				if(imax==i)
+					swap(arr[imin],arr[n-i-1]);
+				if(imax!=n-i-1&&imax!=i)
+					swap(arr[imax],arr[n-i-1]);
+			}
+			if(gl==2){//降序
+				if ( imin!=n-i-1) 
+					swap(arr[imin],arr[n-i-1]);
+				if(imax==n-i-1)
+					swap(arr[i],arr[imin]);
+				if(imax!=i&&imax!=n-i-1)
+					swap(arr[imax],arr[i]);
+			}
 			
 			cout<<i+1<<" 趟： ";PrintSort();
 		}
@@ -42,8 +57,8 @@ public:
 
 
 int main (int argc, char *argv[]) {
-	int a[]={120,70,56,32,44};//5个数
-	SelectSort ss(a,sizeof(a)/sizeof(int),1);
+	int a[]={44,70,56,32,120};//5个数
+	SelectSort ss(a,sizeof(a)/sizeof(int),2);
 	return 0;
 }
 
